@@ -1,22 +1,4 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-
-import styles from './styles.css'
-
-export default class ExampleComponent extends Component {
-  static propTypes = {
-    text: PropTypes.string
-  }
-
-  render() {
-    const {
-      text
-    } = this.props
-
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
-  }
-}
+export { default as Canvas } from './components/Canvas/Canvas';
+export { default as Particle } from './components/Canvas/Particle';
+export { default as Particles } from './components/Canvas/Particles';
+export { importAllImages, importAll, hasProperty, isObject } from './utils';
