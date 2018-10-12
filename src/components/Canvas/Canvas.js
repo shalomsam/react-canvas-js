@@ -65,7 +65,6 @@ export default class Canvas extends Component {
         });
 
         this.canvasSizing(this.canvas);
-        // this.makeReactive(this.particles.debug, 'frameRate');
         if (this.particles !== null && typeof this.particles.debug === 'object') {
             this.debugInterval = setInterval(() => {
                 window.test = this.particles.debug;

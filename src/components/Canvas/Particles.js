@@ -42,9 +42,7 @@ export default class Particles {
         this.canvas = canvas;
         this.ctx = canvas.getContext('2d');
         this.precision = precision || 2;
-        if (backgroundColor) {
-            this.canvas.style.backgroundColor = backgroundColor;
-        }
+        this.canvas.style.backgroundColor = backgroundColor || '#f1f1f1';
 
         this.maxParticles = maxParticles === null || maxParticles === undefined ? 50 : maxParticles;
         this.colors = Array.isArray(colors) ? colors : [colors] || ['red', 'green', 'yellow'];
@@ -55,7 +53,6 @@ export default class Particles {
         this.maxSpeed = +parseFloat(maxSpeed).toFixed(this.precision) || 0.09;
         this.minSpeed = +parseFloat(minSpeed).toFixed(this.precision) || 0.05;
         this.alpha = alpha || 0.5;
-        this.particleOptions = options;
         this.frameRate = frameRate || 0;
         this.frameInterval = 1000 / this.frameRate;
         this.duration = duration || 0;
@@ -65,7 +62,7 @@ export default class Particles {
             start: null,
             frameRate: null
         };
-
+        this.particleOptions = options;
         this.createParticles();
     }
 
