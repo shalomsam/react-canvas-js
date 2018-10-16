@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Canvas, importAll } from 'react-particles';
+import { Canvas, importAll } from 'react-canvas-js';
 import Prism from 'prismjs';
 import * as Normalizer from 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace';
 import './prism.css';
@@ -50,7 +50,7 @@ const particleOptions = [
 const headers = [
   'Simple Random Particle Animation',
   'Single Shape Only',
-  'Image Particles' 
+  'Image Particles'
 ]
 
 export default class App extends Component {
@@ -85,7 +85,7 @@ export default class App extends Component {
   }
 }
       `;
-      
+
       appCode = this.normalizer.normalize(appCode.toString(), {indent: 1});
       const html = Prism.highlight(appCode, Prism.languages.javascript);
 

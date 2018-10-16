@@ -1,6 +1,6 @@
 {
-  "name": "react-particles-example",
-  "homepage": "https://shalomsam.github.io/react-particles",
+  "name": "react-canvas-js-example",
+  "homepage": "https://shalomsam.github.io/react-canvas-js",
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
@@ -9,6 +9,7 @@
     "prismjs": "^1.15.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
+    "react-canvas-js": "^1.0.0",
     "react-dom": "^16.4.1",
     "react-particles": "file:..",
     "react-scripts": "^1.1.4"
@@ -16,6 +17,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

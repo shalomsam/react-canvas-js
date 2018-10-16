@@ -1,6 +1,6 @@
-# react-canvas-js
+# react-canvas-js ([demo](https://shalomsam.github.io/react-canvas-js/))
 
-> Awesome HTML Canvas Particle animation in React!
+> :rocket: Awesome HTML Canvas animations in React!
 
 [![NPM](https://img.shields.io/npm/v/react-canvas-js.svg)](https://www.npmjs.com/package/react-canvas-js) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -9,6 +9,7 @@
 ```bash
 npm install --save react-canvas-js
 ```
+
 
 ## Usage
 
@@ -38,6 +39,7 @@ class Example extends Component {
 }
 ```
 
+
 ## Available Options
 
 Option | Type | Required | Default | Description
@@ -66,6 +68,7 @@ debugOptions.enabled | `boolean` | Yes | `false` | Enables debugging, and binds 
 debugOptions.attachAllParticles | `boolean` | No | `false` | Binds all the Particle objects to `window.Particles`.
 debugOptions.showFrameRate | `boolean` | No | Shows a frame rate blurb over the canvas, indicating the frame rate achieved by that canvas.
 
+
 ## Planned Features (checklist)
 
 - [ ] Add interaction support.
@@ -78,6 +81,7 @@ debugOptions.showFrameRate | `boolean` | No | Shows a frame rate blurb over the 
 
 *My goal is to progress to more than just Particle animation, by simplifying and adding support for all canvas animation use cases. Suggestions and feedback are welcome too.*
 
+
 ## Contributing
 
 I could use some assistance in building and improving this component. I'll welcome pull requests for bug fixes, new features, improvements and writing test cases. If you are interested head on over to the [Issues](https://github.com/shalomsam/react-canvas-js/issues) section, and pick up any of the issue(s) that interest you. The issues with label `need help` could really do with some help (as the label suggests). Please create your pull requests to the `develop` branch. Top Contributors will be added here under the contributors section (if you'd like that).
@@ -89,6 +93,7 @@ I could use some assistance in building and improving this component. I'll welco
 + Checkout my <a href="https://shalomsam.com" title="Full Stack Web Developer, UI/UX Javascript Specialist" target="_blank">Full Stack Web Developer Website</a>
 + You can checkout this <a href="http://react.shalomsam.com" title="Full Stack Developer, Angular Portfolio" target="_blank">React Portfolio here</a>
 + A scope of my work @ <a title="Web Software Developer Portfolio" target="_blank" href="https://react.shalomsam.com/portfolio">React Portfolio</a>
+
 
 ## License
 
