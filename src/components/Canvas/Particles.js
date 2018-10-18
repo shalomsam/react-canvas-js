@@ -63,6 +63,7 @@ export default class Particles {
             frameRate: null
         };
         this.particleOptions = options;
+        this.paused = false;
         this.createParticles();
     }
 
@@ -240,7 +241,7 @@ export default class Particles {
         });
     }
 
-    stop = () => {
+    clear = () => {
         window.cancelAnimationFrame(this.interval);
     }
 
