@@ -9,10 +9,9 @@
     "prismjs": "^1.15.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
-    "react-canvas-js": "^1.0.0",
+    "react-canvas-js": "file:..",
     "react-dom": "^16.4.1",
-    "react-particles": "file:..",
-    "react-scripts": "^1.1.4"
+    "react-scripts": "^2.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
