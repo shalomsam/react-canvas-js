@@ -48,6 +48,20 @@ export default class Canvas extends Component {
                 attachSingleParticles: PropTypes.bool
             })
         }),
+        handler: (props, propName, componentName) => {
+            if (props.handler === null || props.handler === undefined) {
+                return null;
+            }
+
+            if (!props.handler.hasOwnProperty('animate') && typeof props.handler.animate !== 'function') {
+                return new Error(`${propName} must have an 'animate' method in ${componentName}.`);
+            }
+            if (!props.handler.hasOwnProperty('draw') && typeof props.handler.draw !== 'function') {
+                return new Error(`${propName} must have an 'draw' method in ${componentName}.`);
+            }
+
+            return null;
+        },
         className: PropTypes.string,
         style: PropTypes.object
     }
@@ -55,7 +69,13 @@ export default class Canvas extends Component {
     state = {
         debug: null
     }
+    handler = null;
     debugInterval = null;
+
+    constructor(props) {
+        super(props);
+        this.handler = props.handler || Particles;
+    }
 
     componentDidMount() {
         window.addEventListener('resize', () => {
@@ -94,7 +114,7 @@ export default class Canvas extends Component {
         canvas.height = scale * wHeight;
 
         if (this.particles !== null && typeof this.particles === 'object') {
-            this.particles.stop();
+            this.particles.clear();
             delete this.particles;
         }
 
@@ -103,7 +123,8 @@ export default class Canvas extends Component {
 
     animate = () => {
         let options = this.props.options;
-        this.particles = new Particles(this.canvas, options);
+        let Handler = this.handler;
+        this.particles = new Handler(this.canvas, options);
         this.particles.animate();
     };
 
