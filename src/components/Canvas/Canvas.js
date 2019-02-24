@@ -69,11 +69,12 @@ export default class Canvas extends Component {
     state = {
         debug: null
     }
+    handler = null;
     debugInterval = null;
 
-    constructor() {
-        super();
-        this.props.handler = this.props.handler || Particles;
+    constructor(props) {
+        super(props);
+        this.handler = props.handler || Particles;
     }
 
     componentDidMount() {
@@ -122,7 +123,7 @@ export default class Canvas extends Component {
 
     animate = () => {
         let options = this.props.options;
-        let Handler = this.props.handler;
+        let Handler = this.handler;
         this.particles = new Handler(this.canvas, options);
         this.particles.animate();
     };
