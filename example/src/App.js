@@ -14,7 +14,6 @@ icons = icons.map((icon) => {
   }
 });
 
-
 const particleOptions = [
   {
     'maxParticles': 50,
@@ -27,22 +26,22 @@ const particleOptions = [
     'backgroundColor': '#1E1F29'
   },
   {
-    "maxParticles": 50,
-    "colors": ["#2E1D62", "#513D91", "#487EEF", "#11A887"],
-    "shapes": ["circle"],
-    "size": 10,
-    "minSpeed": 0.05,
-    "maxSpeed": 0.20,
-    "alpha": 0.70,
+    'maxParticles': 50,
+    'colors': ['#2E1D62', '#513D91', '#487EEF', '#11A887'],
+    'shapes': ['circle'],
+    'size': 10,
+    'minSpeed': 0.05,
+    'maxSpeed': 0.20,
+    'alpha': 0.70,
     'backgroundColor': '#f1f1f1'
   },
   {
-    "maxParticles": 0,
-    "shapes": icons,
-    "size": 100,
-    "minSpeed": 0.10,
-    "maxSpeed": 0.30,
-    "alpha": 0.90,
+    'maxParticles': 0,
+    'shapes': icons,
+    'size': 100,
+    'minSpeed': 0.10,
+    'maxSpeed': 0.30,
+    'alpha': 0.90,
     'backgroundColor': '#f1f1f1'
   }
 ]
@@ -54,33 +53,27 @@ const headers = [
 ]
 
 export default class App extends Component {
-
-  componentDidMount() {
-
-  }
-
   render() {
     this.normalizer = new Normalizer({
       'remove-trailing': true,
       'remove-indent': true,
       'left-trim': true,
-      'right-trim': true,
+      'right-trim': true
     });
 
     const examples = particleOptions.map((option, i) => {
-
-      let code = 'const sample'+ (i+1) + ' = ' + JSON.stringify(option, null, 2) + ';';
+      let code = 'const sample' + (i + 1) + ' = ' + JSON.stringify(option, null, 2) + ';';
 
       let appCode = `
         import React, { Component } from 'react';
-import { Canvas } from 'react-particles';
+import { Canvas } from 'react-canvas-js';
 
 ${code}
 
 export default class App extends Component {
   render() {
     return (
-      <Canvas options={sample${i+1}} />
+      <Canvas options={sample${i + 1}} />
     )
   }
 }
@@ -90,11 +83,11 @@ export default class App extends Component {
       const html = Prism.highlight(appCode, Prism.languages.javascript);
 
       return (
-        <div className='exampleWrp' key={'Sample' + (i+1)} style={{
+        <div className='exampleWrp' key={'Sample' + (i + 1)} style={{
           border: '1px solid #f1f1f1',
           padding: '10px',
           margin: '10px auto'
-          }}>
+        }}>
           <h3>{headers[i]}</h3>
           <div className='canvasWrp'>
             <Canvas options={option} style={{height: '460px'}} />
@@ -102,7 +95,7 @@ export default class App extends Component {
           <p><strong>Options used for above output:</strong></p>
           <div className='codeWrp'>
             <pre className='language-javascript'>
-              <code dangerouslySetInnerHTML={{__html: html}}></code>
+              <code dangerouslySetInnerHTML={{__html: html}} />
             </pre>
           </div>
         </div>
